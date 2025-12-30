@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Academics", href: "#academics" },
-  { name: "Admissions", href: "#admissions" },
-  { name: "Student Life", href: "#student-life" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/#about" },
+  { name: "Academics", href: "/academics" },
+  { name: "Admissions", href: "/#admissions" },
+  { name: "Student Life", href: "/#student-life" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
