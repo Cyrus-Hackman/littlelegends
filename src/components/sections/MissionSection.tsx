@@ -1,4 +1,5 @@
 import { Heart, Lightbulb, Target, Shield } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrapper";
 
 const values = [
   {
@@ -28,7 +29,7 @@ export function MissionSection() {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <FadeIn className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Our Mission
           </span>
@@ -40,25 +41,24 @@ export function MissionSection() {
             develops intellectual curiosity, emotional intelligence, and social
             responsibility in every child.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Values Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((value, index) => (
-            <div
-              key={value.title}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <value.icon className="text-primary" size={28} />
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.15}>
+          {values.map((value) => (
+            <StaggerItem key={value.title}>
+              <div className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                  <value.icon className="text-primary" size={28} />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground">{value.description}</p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                {value.title}
-              </h3>
-              <p className="text-muted-foreground">{value.description}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
