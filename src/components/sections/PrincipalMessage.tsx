@@ -1,30 +1,53 @@
 import { Quote } from "lucide-react";
+import { FadeIn } from "@/components/animations/MotionWrapper";
+import { motion } from "framer-motion";
 
 export function PrincipalMessage() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             {/* Principal Image */}
-            <div className="lg:col-span-2">
+            <FadeIn direction="right" className="lg:col-span-2">
               <div className="relative">
-                <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-accent overflow-hidden">
+                <motion.div 
+                  className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-accent overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
+                    <motion.div 
+                      className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
                       <span className="text-4xl font-bold text-primary">JD</span>
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
                 {/* Decorative Element */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-2xl -z-10" />
+                <motion.div 
+                  className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-2xl -z-10"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                />
               </div>
-            </div>
+            </FadeIn>
 
             {/* Message Content */}
-            <div className="lg:col-span-3">
+            <FadeIn direction="left" delay={0.2} className="lg:col-span-3">
               <div className="relative">
-                <Quote className="absolute -top-4 -left-4 text-primary/20" size={64} />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Quote className="absolute -top-4 -left-4 text-primary/20" size={64} />
+                </motion.div>
                 
                 <div className="relative z-10">
                   <span className="text-primary font-semibold text-sm uppercase tracking-wider">
@@ -63,7 +86,7 @@ export function PrincipalMessage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>

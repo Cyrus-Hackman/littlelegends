@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrapper";
+import { motion } from "framer-motion";
 
 const newsItems = [
   {
@@ -29,7 +31,7 @@ export function NewsSection() {
   return (
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+        <FadeIn className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Stay Updated
@@ -42,34 +44,40 @@ export function NewsSection() {
             View All News
             <ArrowRight size={16} />
           </Button>
-        </div>
+        </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
           {newsItems.map((item, index) => (
-            <article
-              key={index}
-              className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-all duration-300"
-            >
-              {/* Image Placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-accent flex items-center justify-center">
-                <span className="text-xs font-medium text-primary bg-background/80 px-3 py-1 rounded-full">
-                  {item.category}
-                </span>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                  <Calendar size={14} />
-                  <span>{item.date}</span>
+            <StaggerItem key={index}>
+              <motion.article
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 h-full"
+              >
+                {/* Image Placeholder */}
+                <div className="h-48 bg-gradient-to-br from-primary/10 to-accent flex items-center justify-center overflow-hidden">
+                  <motion.span 
+                    className="text-xs font-medium text-primary bg-background/80 px-3 py-1 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {item.category}
+                  </motion.span>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">{item.excerpt}</p>
-              </div>
-            </article>
+
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <Calendar size={14} />
+                    <span>{item.date}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{item.excerpt}</p>
+                </div>
+              </motion.article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
