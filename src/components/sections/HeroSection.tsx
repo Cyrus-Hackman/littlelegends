@@ -96,7 +96,7 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Hero Image Placeholder */}
+          {/* Hero Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -109,19 +109,13 @@ export function HeroSection() {
                 animate={{ rotate: [6, 8, 6] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent rounded-3xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <motion.div 
-                    className="w-32 h-32 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <GraduationCap size={64} className="text-primary" />
-                  </motion.div>
-                  <p className="text-lg font-semibold text-foreground">
-                    Where Little Legends Begin
-                  </p>
-                </div>
+              <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=800&fit=crop"
+                  alt="Happy students learning together"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
               </div>
             </div>
           </motion.div>

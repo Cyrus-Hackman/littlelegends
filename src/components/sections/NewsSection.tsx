@@ -10,6 +10,7 @@ const newsItems = [
     excerpt:
       "Join us for an exciting day of athletic competitions and team spirit as our students showcase their talents.",
     category: "Events",
+    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&h=400&fit=crop",
   },
   {
     date: "Dec 20, 2024",
@@ -17,6 +18,7 @@ const newsItems = [
     excerpt:
       "Congratulations to all participants! Our young scientists impressed judges with innovative projects.",
     category: "Achievements",
+    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&h=400&fit=crop",
   },
   {
     date: "Dec 15, 2024",
@@ -24,6 +26,7 @@ const newsItems = [
     excerpt:
       "School will be closed from December 23rd to January 2nd. We wish all families a wonderful holiday season.",
     category: "Announcements",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
   },
 ];
 
@@ -54,10 +57,16 @@ export function NewsSection() {
                 transition={{ duration: 0.3 }}
                 className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300 h-full"
               >
-                {/* Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-accent flex items-center justify-center overflow-hidden">
+                {/* News Image */}
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <motion.span 
-                    className="text-xs font-medium text-primary bg-background/80 px-3 py-1 rounded-full"
+                    className="absolute top-4 left-4 text-xs font-medium text-white bg-primary/90 px-3 py-1 rounded-full"
                     whileHover={{ scale: 1.05 }}
                   >
                     {item.category}
