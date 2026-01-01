@@ -12,19 +12,16 @@ export function PrincipalMessage() {
             <FadeIn direction="right" className="lg:col-span-2">
               <div className="relative">
                 <motion.div 
-                  className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/20 to-accent overflow-hidden"
+                  className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div 
-                      className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <span className="text-4xl font-bold text-primary">JD</span>
-                    </motion.div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
+                    alt="Dr. Jane Doe - Principal"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
                 </motion.div>
                 {/* Decorative Element */}
                 <motion.div 
