@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 
@@ -75,6 +76,7 @@ const contactInfo = [
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -90,6 +92,10 @@ const Contact = () => {
   const onSubmit = (data: ContactFormValues) => {
     // Simulate form submission
     setIsSubmitted(true);
+    toast({
+      title: "Message sent successfully!",
+      description: "Thank you for reaching out. We'll get back to you within 24 hours.",
+    });
     setTimeout(() => {
       setIsSubmitted(false);
       form.reset();
