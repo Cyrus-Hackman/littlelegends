@@ -1,11 +1,43 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, "Full name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z.string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  phone: z.string()
+    .trim()
+    .max(20, "Phone number must be less than 20 characters")
+    .optional()
+    .or(z.literal("")),
+  subject: z.string()
+    .trim()
+    .min(1, "Subject is required")
+    .max(200, "Subject must be less than 200 characters"),
+  message: z.string()
+    .trim()
+    .min(1, "Message is required")
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
@@ -42,27 +74,26 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = (data: ContactFormValues) => {
     // Simulate form submission
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormState({ name: "", email: "", phone: "", subject: "", message: "" });
+      form.reset();
     }, 3000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -124,90 +155,113 @@ const Contact = () => {
                       </p>
                     </motion.div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label htmlFor="name" className="text-sm font-medium text-foreground">
-                            Full Name *
-                          </label>
-                          <Input
-                            id="name"
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <FormField
+                            control={form.control}
                             name="name"
-                            placeholder="John Doe"
-                            value={formState.name}
-                            onChange={handleChange}
-                            required
-                            className="h-12"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Full Name *</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    placeholder="John Doe"
+                                    className="h-12"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
                           />
-                        </div>
-                        <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium text-foreground">
-                            Email Address *
-                          </label>
-                          <Input
-                            id="email"
+                          <FormField
+                            control={form.control}
                             name="email"
-                            type="email"
-                            placeholder="john@example.com"
-                            value={formState.email}
-                            onChange={handleChange}
-                            required
-                            className="h-12"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Email Address *</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="email"
+                                    placeholder="john@example.com"
+                                    className="h-12"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
                           />
                         </div>
-                      </div>
 
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                            Phone Number
-                          </label>
-                          <Input
-                            id="phone"
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <FormField
+                            control={form.control}
                             name="phone"
-                            type="tel"
-                            placeholder="+1 (234) 567-890"
-                            value={formState.phone}
-                            onChange={handleChange}
-                            className="h-12"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Phone Number</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="tel"
+                                    placeholder="+1 (234) 567-890"
+                                    className="h-12"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
                           />
-                        </div>
-                        <div className="space-y-2">
-                          <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                            Subject *
-                          </label>
-                          <Input
-                            id="subject"
+                          <FormField
+                            control={form.control}
                             name="subject"
-                            placeholder="How can we help?"
-                            value={formState.subject}
-                            onChange={handleChange}
-                            required
-                            className="h-12"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Subject *</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    placeholder="How can we help?"
+                                    className="h-12"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
                           />
                         </div>
-                      </div>
 
-                      <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-medium text-foreground">
-                          Message *
-                        </label>
-                        <Textarea
-                          id="message"
+                        <FormField
+                          control={form.control}
                           name="message"
-                          placeholder="Write your message here..."
-                          value={formState.message}
-                          onChange={handleChange}
-                          required
-                          className="min-h-[150px] resize-none"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Message *</FormLabel>
+                              <FormControl>
+                                <Textarea
+                                  placeholder="Write your message here..."
+                                  className="min-h-[150px] resize-none"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
                         />
-                      </div>
 
-                      <Button type="submit" size="lg" className="w-full h-12 text-base">
-                        <Send className="w-4 h-4 mr-2" />
-                        Send Message
-                      </Button>
-                    </form>
+                        <Button 
+                          type="submit" 
+                          size="lg" 
+                          className="w-full h-12 text-base"
+                          disabled={form.formState.isSubmitting}
+                        >
+                          <Send className="w-4 h-4 mr-2" />
+                          {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                        </Button>
+                      </form>
+                    </Form>
                   )}
                 </div>
               </FadeIn>
