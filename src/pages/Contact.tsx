@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string()
@@ -89,17 +90,31 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. We'll get back to you within 24 hours.",
-    });
-    setTimeout(() => {
-      setIsSubmitted(false);
-      form.reset();
-    }, 3000);
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const { data: response, error } = await supabase.functions.invoke('send-contact-email', {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. We'll get back to you within 24 hours.",
+      });
+      setTimeout(() => {
+        setIsSubmitted(false);
+        form.reset();
+      }, 3000);
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact us directly by phone.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
