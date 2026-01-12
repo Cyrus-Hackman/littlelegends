@@ -43,10 +43,14 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" size="sm">
-              Contact Us
-            </Button>
-            <Button size="sm">Apply Now</Button>
+            <Link to="/contact">
+              <Button variant="outline" size="sm">
+                Contact Us
+              </Button>
+            </Link>
+            <Link to="/admissions">
+              <Button size="sm">Apply Now</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,10 +77,14 @@ export function Header() {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4">
-                <Button variant="outline" className="w-full">
-                  Contact Us
-                </Button>
-                <Button className="w-full">Apply Now</Button>
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full">
+                    Contact Us
+                  </Button>
+                </Link>
+                <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full">Apply Now</Button>
+                </Link>
               </div>
             </nav>
           </div>
