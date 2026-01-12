@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -13,6 +14,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -31,25 +33,35 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
-                href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                to={link.href}
+                className="relative text-muted-foreground font-medium transition-all duration-300 hover:text-primary after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                activeClassName="text-primary after:scale-x-100 after:origin-bottom-left"
               >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/contact">
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="transition-all duration-300 hover:scale-105 hover:shadow-md"
+              >
                 Contact Us
               </Button>
             </Link>
             <Link to="/admissions">
-              <Button size="sm">Apply Now</Button>
+              <Button 
+                size="sm"
+                className="transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                Apply Now
+              </Button>
             </Link>
           </div>
 
@@ -67,23 +79,29 @@ export function Header() {
           <div className="lg:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium py-2"
+                  to={link.href}
+                  className="text-muted-foreground hover:text-primary transition-all duration-300 font-medium py-2 pl-2 border-l-2 border-transparent"
+                  activeClassName="text-primary border-l-primary bg-primary/5"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
               <div className="flex flex-col gap-2 pt-4">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    className="w-full transition-all duration-300 active:scale-95"
+                  >
                     Contact Us
                   </Button>
                 </Link>
                 <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full">Apply Now</Button>
+                  <Button className="w-full transition-all duration-300 active:scale-95">
+                    Apply Now
+                  </Button>
                 </Link>
               </div>
             </nav>
