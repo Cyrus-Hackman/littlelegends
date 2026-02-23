@@ -1,6 +1,7 @@
 import { Quote } from "lucide-react";
 import { FadeIn } from "@/components/animations/MotionWrapper";
 import { motion } from "framer-motion";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 
 export function PrincipalMessage() {
   return (
@@ -16,15 +17,15 @@ export function PrincipalMessage() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img 
+                  <ParallaxImage 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
                     alt="Dr. Jane Doe - Principal"
-                    className="w-full h-full object-cover"
+                    speed={0.2}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
                 </motion.div>
                 {/* Decorative Element */}
-                <motion.div 
+                <motion.div   
                   className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-2xl -z-10"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -59,7 +60,7 @@ export function PrincipalMessage() {
                       Dear Parents and Students,
                     </p>
                     <p>
-                      Welcome to Little Legends School! For over 15 years, we have been
+                      Welcome to Little Legends School! For over 17 years, we have been
                       committed to providing an exceptional educational experience that
                       prepares students for success in an ever-changing world.
                     </p>

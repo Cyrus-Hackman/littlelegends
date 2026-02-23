@@ -6,17 +6,26 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "About", href: "/about" },
+  { name: "Home", href: "/" },
   { name: "Academics", href: "/academics" },
   { name: "Student Life", href: "/student-life" },
   { name: "Admissions", href: "/admissions" },
+  { name: "Video Gallery", href: "/video-gallery" },
   { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
+
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { pathname } = location;
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +50,7 @@ export function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">LL</span>
+              <span className="text-primary-foreground font-bold text-lg">LLS</span>
             </div>
             <span className="font-bold text-lg md:text-xl text-foreground">
               Little Legends School
@@ -54,6 +63,7 @@ export function Header() {
               <NavLink
                 key={link.name}
                 to={link.href}
+                end={link.href === "/"}
                 className="relative text-muted-foreground font-medium transition-all duration-300 hover:text-primary after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
                 activeClassName="text-primary after:scale-x-100 after:origin-bottom-left"
               >

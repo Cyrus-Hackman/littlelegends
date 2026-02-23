@@ -13,6 +13,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import { StaggeredText } from "@/components/animations/StaggeredText";
 
 const gradeLevels = [
   {
@@ -140,9 +141,9 @@ const Academics = () => {
                 <BookOpen size={18} />
                 <span>Academic Excellence</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                A Curriculum That Opens <span className="text-primary">Young Minds</span>
-              </h1>
+              <div className="text-4xl md:text-5xl font-bold text-foreground mb-6 mt-4">
+                <StaggeredText text="A Curriculum That Opens Young Minds" highlightWords={["Young", "Minds"]} />
+              </div>
               <p className="text-lg text-muted-foreground">
                 Powered by Pearson's internationally recognized curriculum, we provide a
                 practical, hands-on education that nurtures curiosity and builds lifelong learners.

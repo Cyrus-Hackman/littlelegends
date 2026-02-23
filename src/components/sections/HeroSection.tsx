@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
+import { StaggeredText } from "@/components/animations/StaggeredText";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 
 export function HeroSection() {
   return (
@@ -32,15 +35,13 @@ export function HeroSection() {
               <span>Admissions Open 2025-26</span>
             </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
-            >
-              Educating Minds,{" "}
-              <span className="text-primary">Shaping Futures</span>
-            </motion.h1>
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 mt-4">
+              <StaggeredText
+                text="Educating Minds, Shaping Futures"
+                highlightWords={["Shaping", "Futures"]}
+                delay={0.2}
+              />
+            </div>
 
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -58,10 +59,12 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button size="lg" className="text-base gap-2">
-                Apply Now
-                <ArrowRight size={18} />
-              </Button>
+              <Link to="/admissions">
+                <Button size="lg" className="text-base gap-2">
+                  Apply Now
+                  <ArrowRight size={18} />
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="text-base">
                 Schedule a Visit
               </Button>
@@ -110,12 +113,12 @@ export function HeroSection() {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=800&fit=crop"
-                  alt="Happy students learning together"
-                  className="w-full h-full object-cover"
+                <ParallaxImage 
+                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop"
+                  alt="A happy little student smiling in class"
+                  speed={0.4}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </motion.div>

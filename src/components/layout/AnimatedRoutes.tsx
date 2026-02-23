@@ -8,6 +8,7 @@ import Admissions from "@/pages/Admissions";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
+import VideoGallery from "@/pages/VideoGallery";
 
 export function AnimatedRoutes() {
   const location = useLocation();
@@ -60,6 +61,14 @@ export function AnimatedRoutes() {
           element={
             <PageTransition>
               <Contact />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/video-gallery"
+          element={
+            <PageTransition>
+              <VideoGallery />
             </PageTransition>
           }
         />

@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { StaggeredText } from "@/components/animations/StaggeredText";
 import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
@@ -56,7 +57,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["123 Education Lane", "Learning City, LC 12345"],
+    details: ["EAST-LEGON HILLS, AUDU STREET", "Accra"],
   },
   {
     icon: Phone,
@@ -133,9 +134,9 @@ const Contact = () => {
                 <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
                   Get In Touch
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                  Contact Us
-                </h1>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                  <StaggeredText text="Contact Us" highlightWords={["Contact", "Us"]} />
+                </div>
                 <p className="text-lg md:text-xl text-muted-foreground">
                   Have questions? We'd love to hear from you. Send us a message 
                   and we'll respond as soon as possible.
@@ -357,7 +358,7 @@ const Contact = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border">
                 <div className="aspect-[16/9] md:aspect-[21/9]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256349542!2d-73.98823492404069!3d40.75797623440235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1699891234567!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15880.473237138644!2d-0.10464302327880859!3d5.696041748564722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf83fcae5fd9eb%3A0x4d85b43d994767c6!2sLITTLE%20LEGENDS%20SCHOOL%2C%20East%20Legon%20Hills!5e0!3m2!1sen!2sgh!4v1771575004226!5m2!1sen!2sgh"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -379,7 +380,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-bold text-foreground mb-1">Little Legends School</h3>
                         <p className="text-sm text-muted-foreground mb-3">
-                          123 Education Lane, Learning City, LC 12345
+                          EAST-LEGON HILLS, AUDU STREET, Accra
                         </p>
                         <a
                           href="https://maps.google.com"

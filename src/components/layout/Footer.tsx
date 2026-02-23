@@ -1,12 +1,14 @@
 import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { name: "About Us", href: "#about" },
-  { name: "Academics", href: "#academics" },
-  { name: "Admissions", href: "#admissions" },
-  { name: "Student Life", href: "#student-life" },
+  { name: "About Us", href: "/about" },
+  { name: "Academics", href: "/academics" },
+  { name: "Admissions", href: "/admissions" },
+  { name: "Student Life", href: "/student-life" },
+  { name: "Video Gallery", href: "/video-gallery" },
   { name: "Facilities", href: "#facilities" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -53,12 +55,12 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-background/70 hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,7 +73,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-background/70">
-                  123 Education Lane, Learning City, LC 12345
+                 EAST-LEGON HILLS, AUDU STREET, Accra
                 </span>
               </li>
               <li>
@@ -101,7 +103,7 @@ export function Footer() {
       <div className="border-t border-background/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
-            <p>© 2024 Little Legends School. All rights reserved.</p>
+            <p>© 2026 Little Legends School. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">
                 Privacy Policy

@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useToast } from "@/hooks/use-toast";
-import { z } from "zod";
+import { z } from "zod"; 
 import { 
   ClipboardList, 
   FileText, 
@@ -19,6 +19,8 @@ import {
   Mail,
   MapPin
 } from "lucide-react";
+import { StaggeredText } from "@/components/animations/StaggeredText";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 
 const inquirySchema = z.object({
   parentName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -130,12 +132,27 @@ const Admissions = () => {
       return;
     }
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Construct Gmail web link
+    const recipient = "principal@littlelegendschool.com";
+    const subject = `Admission Inquiry: ${formData.childName}`;
+    const bodyValues = [
+      `Parent Name: ${formData.parentName}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Child Name: ${formData.childName}`,
+      `Grade Level: ${formData.gradeLevel}`,
+      "",
+      "Message:",
+      formData.message || "N/A"
+    ].join("\n");
+    
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyValues)}`;
+    
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
     
     toast({
-      title: "Inquiry Submitted Successfully!",
-      description: "Our admissions team will contact you within 24-48 hours.",
+      title: "Opening Gmail...",
+      description: "Your inquiry details were added to a new Gmail draft.",
     });
 
     setFormData({
@@ -155,19 +172,20 @@ const Admissions = () => {
       
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&h=1080&fit=crop')"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
-        </div>
-        <div className="relative z-10 text-center text-primary-foreground px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Join the Little Legends Family
-          </h1>
-          <p className="text-xl md:text-2xl opacity-90">
+        <ParallaxImage 
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&h=1080&fit=crop"
+          alt="Admissions Hero"
+          className="absolute inset-0 z-0"
+          speed={0.3}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-0" />
+        <div className="relative z-10 text-center text-primary-foreground px-4 max-w-4xl mx-auto flex flex-col items-center justify-center">
+          {/* main heading is centered in the hero */}
+          <div className="w-full flex justify-center text-4xl md:text-6xl font-bold mb-6">
+            <StaggeredText text="Join the Little Legends Family" highlightWords={["Legends"]} />
+          </div>
+          {/* tagline extends directly underneath the heading */}
+          <p className="w-full text-center mt-2 text-xl md:text-2xl opacity-90">
             Begin your child's journey of discovery, growth, and excellence with us
           </p>
         </div>
@@ -401,8 +419,8 @@ const Admissions = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-1">Visit Us</h4>
-                        <p className="opacity-90">123 Education Lane</p>
-                        <p className="opacity-90">Learning City, LC 12345</p>
+                        <p className="opacity-90">AUDU STREET</p>
+                        <p className="opacity-90">Accra</p>
                       </div>
                     </div>
                   </div>

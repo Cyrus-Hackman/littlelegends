@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FadeIn, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations/MotionWrapper";
+import { StaggeredText } from "@/components/animations/StaggeredText";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 import { motion } from "framer-motion";
 import { 
   Target, 
@@ -135,9 +137,9 @@ const About = () => {
                 <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                   About Us
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-                  Building Futures, One Legend at a Time
-                </h1>
+                <div className="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+                  <StaggeredText text="Building Futures, One Legend at a Time" highlightWords={["Futures,", "Legend"]} />
+                </div>
                 <p className="text-lg text-muted-foreground mb-8">
                   For over 15 years, Little Legends School has been a beacon of educational 
                   excellence, nurturing young minds and helping them discover their unique potential 
@@ -156,10 +158,10 @@ const About = () => {
               <FadeIn delay={0.2} direction="left">
                 <div className="relative">
                   <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                    <img 
+                    <ParallaxImage 
                       src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=500&fit=crop"
                       alt="Little Legends School Campus"
-                      className="w-full h-full object-cover"
+                      speed={0.3}
                     />
                   </div>
                   <motion.div 
