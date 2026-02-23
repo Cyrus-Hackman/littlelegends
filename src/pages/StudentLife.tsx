@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Music, Palette, Trophy, Users, Star, Heart, Lightbulb, Target } from "lucide-react";
+import { StaggeredText } from "@/components/animations/StaggeredText";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 
 const StudentLife = () => {
   const clubs = [
@@ -102,18 +104,17 @@ const StudentLife = () => {
       
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&h=1080&fit=crop')"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
-        </div>
+        <ParallaxImage 
+          src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&h=1080&fit=crop"
+          alt="Student Life Hero"
+          className="absolute inset-0 z-0"
+          speed={0.3}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-0" />
         <div className="relative z-10 text-center text-primary-foreground px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Student Life at Little Legends
-          </h1>
+          <div className="text-4xl md:text-6xl font-bold mb-6 mt-4">
+            <StaggeredText text="Student Life at Little Legends" highlightWords={["Legends"]} />
+          </div>
           <p className="text-xl md:text-2xl opacity-90">
             Where every child discovers their passion, builds friendships, and creates lasting memories
           </p>
