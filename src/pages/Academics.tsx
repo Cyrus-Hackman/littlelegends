@@ -151,7 +151,7 @@ const Academics = () => {
               <div className="flex justify-center items-center mt-6">
                 <div className="bg-white/95 backdrop-blur-sm pt-4 pb-3 px-8 rounded-2xl shadow-sm border border-border/50 transition-transform hover:scale-105 duration-300">
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pearson_logo.svg/512px-Pearson_logo.svg.png" 
+                    src="https://logo.clearbit.com/pearson.com" 
                     alt="Pearson Edexcel Logo" 
                     className="h-10 md:h-12 object-contain"
                   />
