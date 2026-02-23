@@ -144,10 +144,19 @@ const Academics = () => {
               <div className="text-4xl md:text-5xl font-bold text-foreground mb-6 mt-4">
                 <StaggeredText text="A Curriculum That Opens Young Minds" highlightWords={["Young", "Minds"]} />
               </div>
-              <p className="text-lg text-muted-foreground">
-                Powered by Pearson's internationally recognized curriculum, we provide a
+              <p className="text-lg text-muted-foreground mb-8">
+                Powered by Pearson Edexcel's internationally recognized curriculum, we provide a
                 practical, hands-on education that nurtures curiosity and builds lifelong learners.
               </p>
+              <div className="flex justify-center items-center mt-6">
+                <div className="bg-white/95 backdrop-blur-sm pt-4 pb-3 px-8 rounded-2xl shadow-sm border border-border/50 transition-transform hover:scale-105 duration-300">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pearson_logo.svg/512px-Pearson_logo.svg.png" 
+                    alt="Pearson Edexcel Logo" 
+                    className="h-10 md:h-12 object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
