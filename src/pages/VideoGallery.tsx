@@ -38,9 +38,9 @@ const videoCategories = [
 
 export default function VideoGallery() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
       <Header />
-      <main className="pt-20">
+      <main className="pt-20 bg-background">
         {/* Hero Section */}
       <section className="bg-primary/5 py-20 px-4">
         <div className="container mx-auto max-w-6xl text-center">

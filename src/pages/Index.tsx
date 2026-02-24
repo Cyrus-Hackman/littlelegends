@@ -11,9 +11,9 @@ import { CTASection } from "@/components/sections/CTASection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
       <Header />
-      <main>
+      <main className="bg-background">
         <HeroSection />
         <MissionSection />
         <HighlightCards />
