@@ -79,8 +79,8 @@ export function HeroSection() {
             >
               {[
                 { icon: Users, value: "250+", label: "Happy Students" },
-                { icon: GraduationCap, value: "50+", label: "Expert Teachers" },
-                { icon: Award, value: "15+", label: "Years of Excellence" }
+                { icon: GraduationCap, value: "25+", label: "Expert Teachers" },
+                { icon: Award, value: "17+", label: "Years of Excellence" }
               ].map((stat, index) => (
                 <motion.div 
                   key={stat.label}

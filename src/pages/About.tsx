@@ -47,7 +47,7 @@ const timelineEvents = [
   },
   {
     year: "2024",
-    title: "15 Years of Excellence",
+    title: "17 Years of Excellence",
     description: "Celebrating 15 years of nurturing young minds and shaping futures."
   }
 ];
