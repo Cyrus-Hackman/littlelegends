@@ -63,7 +63,7 @@ export function CTASection() {
           <FadeIn delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-primary-foreground/90">
               <motion.a 
-                href="tel:+1234567890" 
+                href="tel: +233544100020" 
                 className="flex items-center gap-2 hover:text-primary-foreground transition-colors"
                 whileHover={{ x: 5 }}
               >
