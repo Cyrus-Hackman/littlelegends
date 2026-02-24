@@ -4,6 +4,7 @@ import { ArrowRight, GraduationCap, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { StaggeredText } from "@/components/animations/StaggeredText";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
+import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
 
 export function HeroSection() {
   return (
@@ -78,9 +79,9 @@ export function HeroSection() {
               className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border"
             >
               {[
-                { icon: Users, value: "250+", label: "Happy Students" },
-                { icon: GraduationCap, value: "25+", label: "Expert Teachers" },
-                { icon: Award, value: "17+", label: "Years of Excellence" }
+                { icon: Users, value: 250, suffix: "+", label: "Happy Students" },
+                { icon: GraduationCap, value: 25, suffix: "+", label: "Expert Teachers" },
+                { icon: Award, value: 17, suffix: "+", label: "Years of Excellence" }
               ].map((stat, index) => (
                 <motion.div 
                   key={stat.label}
@@ -91,7 +92,9 @@ export function HeroSection() {
                 >
                   <div className="flex items-center justify-center lg:justify-start gap-2 text-primary mb-1">
                     <stat.icon size={20} />
-                    <span className="text-2xl md:text-3xl font-bold">{stat.value}</span>
+                    <span className="text-2xl md:text-3xl font-bold">
+                      <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </motion.div>
