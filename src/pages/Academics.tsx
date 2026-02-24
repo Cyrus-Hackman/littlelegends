@@ -130,9 +130,9 @@ const keyDates = [
 
 const Academics = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
       <Header />
-      <main>
+      <main className="bg-background">
         {/* Hero Section */}
         <section className="pt-28 pb-16 bg-gradient-to-br from-accent via-background to-secondary">
           <div className="container mx-auto px-4">

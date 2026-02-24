@@ -99,7 +99,7 @@ const StudentLife = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
       <Header />
       
       {/* Hero Section */}

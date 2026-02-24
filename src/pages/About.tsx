@@ -124,9 +124,9 @@ const stats = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
       <Header />
-      <main className="pt-20">
+      <main className="pt-20 bg-background">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-accent/20 overflow-hidden">
           <motion.div 
