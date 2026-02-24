@@ -113,8 +113,8 @@ const facultyMembers = [
 ];
 
 const stats = [
-  { icon: Users, value: "500+", label: "Students" },
-  { icon: GraduationCap, value: "50+", label: "Teachers" },
+  { icon: Users, value: "250+", label: "Students" },
+  { icon: GraduationCap, value: "25+", label: "Teachers" },
   { icon: Award, value: "100+", label: "Awards" },
   { icon: BookOpen, value: "15+", label: "Years" }
 ];
