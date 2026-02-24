@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
@@ -20,11 +21,31 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-foreground text-background w-full h-full flex flex-col justify-end">
-      <div className="container mx-auto px-4 py-16 flex-grow">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer id="contact" className="bg-foreground text-background">
+      <div className="container mx-auto px-4 py-16">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+        >
           {/* School Info */}
-          <div className="lg:col-span-2">
+          <motion.div 
+            className="lg:col-span-2"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">LL</span>
@@ -47,10 +68,15 @@ export function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+          >
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -64,10 +90,15 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
+          >
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -95,8 +126,8 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Bottom Bar */}

@@ -14,13 +14,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="relative min-h-screen bg-transparent">
-          <div className="relative z-10 bg-background mb-[450px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div className="flex flex-col min-h-screen bg-background">
+          <div className="flex-grow">
             <AnimatedRoutes />
           </div>
-          <div className="fixed bottom-0 left-0 w-full h-[450px] z-0">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </BrowserRouter>
     </TooltipProvider>
