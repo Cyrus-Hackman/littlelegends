@@ -19,7 +19,7 @@ export function PrincipalMessage() {
                 >
                   <ParallaxImage 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
-                    alt="Dr. Jane Doe - Principal"
+                    alt="Dr. Joycelyn Poku - Principal"
                     speed={0.2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
@@ -77,7 +77,7 @@ export function PrincipalMessage() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-border">
-                    <p className="font-semibold text-foreground">Dr. Jane Doe</p>
+                    <p className="font-semibold text-foreground">Dr. Joycelyn Poku</p>
                     <p className="text-sm text-muted-foreground">
                       Principal, Little Legends School
                     </p>
