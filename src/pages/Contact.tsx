@@ -323,7 +323,7 @@ const Contact = () => {
                     <p className="text-primary-foreground/80 mb-4">
                       Call us directly for urgent inquiries about admissions or school programs.
                     </p>
-                    <a href="tel:+1234567890">
+                    <a href="tel: +233544100020">
                       <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                         <Phone className="w-4 h-4 mr-2" />
                         Call Now: +233 (0) 54 410 0020
