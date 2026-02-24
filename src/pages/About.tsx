@@ -171,7 +171,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    <p className="text-3xl font-bold">15+</p>
+                    <p className="text-3xl font-bold">17+</p>
                     <p className="text-sm opacity-90">Years of Excellence</p>
                   </motion.div>
                 </div>
