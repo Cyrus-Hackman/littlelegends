@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FadeIn, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations/MotionWrapper";
 import { StaggeredText } from "@/components/animations/StaggeredText";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
+import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
+import { TiltCard } from "@/components/animations/TiltCard";
 import { motion } from "framer-motion";
 import { 
   Target, 
@@ -113,10 +115,10 @@ const facultyMembers = [
 ];
 
 const stats = [
-  { icon: Users, value: "250+", label: "Students" },
-  { icon: GraduationCap, value: "25+", label: "Teachers" },
-  { icon: Award, value: "100+", label: "Awards" },
-  { icon: BookOpen, value: "17+", label: "Years" }
+  { icon: Users, value: 250, suffix: "+", label: "Students" },
+  { icon: GraduationCap, value: 25, suffix: "+", label: "Teachers" },
+  { icon: Award, value: 100, suffix: "+", label: "Awards" },
+  { icon: BookOpen, value: 17, suffix: "+", label: "Years" }
 ];
 
 const About = () => {
@@ -171,7 +173,9 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    <p className="text-3xl font-bold">17+</p>
+                    <p className="text-3xl font-bold">
+                      <AnimatedCounter value={17} suffix="+" />
+                    </p>
                     <p className="text-sm opacity-90">Years of Excellence</p>
                   </motion.div>
                 </div>
@@ -188,7 +192,9 @@ const About = () => {
                 <StaggerItem key={stat.label}>
                   <div className="text-center text-primary-foreground">
                     <stat.icon className="w-8 h-8 mx-auto mb-3 opacity-80" />
-                    <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
+                    <p className="text-3xl md:text-4xl font-bold">
+                      <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    </p>
                     <p className="text-sm opacity-80">{stat.label}</p>
                   </div>
                 </StaggerItem>
@@ -211,8 +217,9 @@ const About = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <ScaleIn>
-                <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
-                  <CardContent className="p-8">
+                <TiltCard>
+                  <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
+                    <CardContent className="p-8">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                       <Eye className="w-8 h-8 text-primary" />
                     </div>
@@ -222,13 +229,15 @@ const About = () => {
                       and develops compassionate global citizens who positively impact their communities 
                       and the world.
                     </p>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </TiltCard>
               </ScaleIn>
 
               <ScaleIn delay={0.1}>
-                <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
-                  <CardContent className="p-8">
+                <TiltCard>
+                  <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
+                    <CardContent className="p-8">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                       <Target className="w-8 h-8 text-primary" />
                     </div>
@@ -238,15 +247,17 @@ const About = () => {
                       curiosity, emotional intelligence, and ethical values, preparing every child 
                       to thrive in an ever-changing world.
                     </p>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </TiltCard>
               </ScaleIn>
             </div>
 
             {/* Core Values */}
             <FadeIn delay={0.2} className="mt-16">
-              <Card className="max-w-5xl mx-auto border-2">
-                <CardContent className="p-8">
+              <TiltCard>
+                <Card className="max-w-5xl mx-auto border-2 transition-transform duration-300">
+                  <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                       <Heart className="w-8 h-8 text-primary" />
@@ -261,8 +272,9 @@ const About = () => {
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </TiltCard>
             </FadeIn>
           </div>
         </section>
@@ -340,8 +352,9 @@ const About = () => {
                     whileHover={{ y: -8 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-                      <div className="aspect-square overflow-hidden">
+                    <TiltCard>
+                      <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-card">
+                        <div className="aspect-square overflow-hidden">
                         <img 
                           src={member.image} 
                           alt={member.name}
@@ -360,8 +373,9 @@ const About = () => {
                             <Linkedin className="h-4 w-4" />
                           </Button>
                         </div>
-                      </CardContent>
-                    </Card>
+                        </CardContent>
+                      </Card>
+                    </TiltCard>
                   </motion.div>
                 </StaggerItem>
               ))}
