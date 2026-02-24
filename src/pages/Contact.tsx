@@ -62,7 +62,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+1 (234) 567-890", "+1 (234) 567-891"],
+    details: ["+233 (0) 54 410 0020", "+1 (234) 567-891"],
   },
   {
     icon: Mail,
@@ -227,7 +227,7 @@ const Contact = () => {
                                 <FormControl>
                                   <Input
                                     type="tel"
-                                    placeholder="+1 (234) 567-890"
+                                    placeholder="+233 (0) 54 410 0020"
                                     className="h-12"
                                     {...field}
                                   />
@@ -326,7 +326,7 @@ const Contact = () => {
                     <a href="tel:+1234567890">
                       <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                         <Phone className="w-4 h-4 mr-2" />
-                        Call Now: +1 (234) 567-890
+                        Call Now: +233 (0) 54 410 0020
                       </Button>
                     </a>
                   </div>

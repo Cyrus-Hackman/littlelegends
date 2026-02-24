@@ -68,7 +68,7 @@ export function CTASection() {
                 whileHover={{ x: 5 }}
               >
                 <Phone size={18} />
-                <span>+1 (234) 567-890</span>
+                <span>+233 (0) 54 410 0020</span>
               </motion.a>
               <motion.a 
                 href="mailto:info@littlelegends.edu" 
