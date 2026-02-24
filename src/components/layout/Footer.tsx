@@ -82,7 +82,7 @@ export function Footer() {
                   className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
                 >
                   <Phone size={18} className="text-primary flex-shrink-0" />
-                  <span>+1 (234) 567-890</span>
+                  <span>+233 (0) 54 410 0020</span>
                 </a>
               </li>
               <li>
