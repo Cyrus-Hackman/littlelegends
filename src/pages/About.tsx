@@ -63,7 +63,7 @@ const leadershipTeam = [
     name: "Mr. Robert Smith",
     role: "Vice Principal",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    bio: "15+ years experience. Specializes in curriculum development."
+    bio: "17+ years experience. Specializes in curriculum development."
   },
   {
     name: "Mrs. Sarah Johnson",
