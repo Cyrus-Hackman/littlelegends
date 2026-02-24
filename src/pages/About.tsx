@@ -7,6 +7,7 @@ import { StaggeredText } from "@/components/animations/StaggeredText";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
 import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
 import { TiltCard } from "@/components/animations/TiltCard";
+import { AnimatedDrawIcon } from "@/components/animations/AnimatedDrawIcon";
 import { motion } from "framer-motion";
 import { 
   Target, 
@@ -50,7 +51,7 @@ const timelineEvents = [
   {
     year: "2024",
     title: "17 Years of Excellence",
-    description: "Celebrating 15 years of nurturing young minds and shaping futures."
+    description: "Celebrating 17 years of nurturing young minds and shaping futures."
   }
 ];
 
@@ -143,7 +144,7 @@ const About = () => {
                   <StaggeredText text="Building Futures, One Legend at a Time" highlightWords={["Futures,", "Legend"]} />
                 </div>
                 <p className="text-lg text-muted-foreground mb-8">
-                  For over 15 years, Little Legends School has been a beacon of educational 
+                  For over 17 years, Little Legends School has been a beacon of educational 
                   excellence, nurturing young minds and helping them discover their unique potential 
                   in a supportive and innovative learning environment.
                 </p>
@@ -221,7 +222,7 @@ const About = () => {
                   <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
                     <CardContent className="p-8">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                      <Eye className="w-8 h-8 text-primary" />
+                      <AnimatedDrawIcon icon={Eye} className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
                     <p className="text-muted-foreground leading-relaxed">
@@ -239,7 +240,7 @@ const About = () => {
                   <Card className="h-full border-2 hover:border-primary/50 transition-colors group">
                     <CardContent className="p-8">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                      <Target className="w-8 h-8 text-primary" />
+                      <AnimatedDrawIcon icon={Target} className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
                     <p className="text-muted-foreground leading-relaxed">
@@ -260,7 +261,7 @@ const About = () => {
                   <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <Heart className="w-8 h-8 text-primary" />
+                      <AnimatedDrawIcon icon={Heart} className="w-8 h-8 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold text-foreground">Our Core Values</h3>
                   </div>
