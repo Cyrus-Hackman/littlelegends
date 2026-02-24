@@ -20,9 +20,8 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-foreground text-background relative h-[450px]">
-      <div className="sticky bottom-0 left-0 w-full h-[450px] -z-10 flex flex-col justify-end">
-        <div className="container mx-auto px-4 py-16 flex-grow">
+    <footer id="contact" className="bg-foreground text-background w-full h-full flex flex-col justify-end">
+      <div className="container mx-auto px-4 py-16 flex-grow">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* School Info */}
           <div className="lg:col-span-2">
@@ -112,7 +111,6 @@ export function Footer() {
               <a href="#" className="hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              </div>
             </div>
           </div>
         </div>

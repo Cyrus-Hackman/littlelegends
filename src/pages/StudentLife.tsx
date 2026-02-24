@@ -99,7 +99,7 @@ const StudentLife = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -298,8 +298,6 @@ const StudentLife = () => {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

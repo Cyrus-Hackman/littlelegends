@@ -124,7 +124,7 @@ const stats = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
+    <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20 bg-background">
         {/* Hero Section */}
@@ -459,7 +459,6 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
