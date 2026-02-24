@@ -130,7 +130,7 @@ const keyDates = [
 
 const Academics = () => {
   return (
-    <div className="min-h-screen bg-background relative z-10 mb-[450px] shadow-2xl">
+    <div className="min-h-screen bg-background">
       <Header />
       <main className="bg-background">
         {/* Hero Section */}
@@ -381,7 +381,6 @@ const Academics = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
