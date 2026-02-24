@@ -78,7 +78,7 @@ export function HeroSection() {
               className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border"
             >
               {[
-                { icon: Users, value: "500+", label: "Happy Students" },
+                { icon: Users, value: "250+", label: "Happy Students" },
                 { icon: GraduationCap, value: "50+", label: "Expert Teachers" },
                 { icon: Award, value: "15+", label: "Years of Excellence" }
               ].map((stat, index) => (
