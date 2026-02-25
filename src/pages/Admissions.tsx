@@ -398,7 +398,7 @@ const Admissions = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-1">Phone</h4>
-                        <p className="opacity-90">+1 (555) 123-4567</p>
+                        <p className="opacity-90">+233 (0) 54 410 0020</p>
                         <p className="opacity-90">+1 (555) 123-4568</p>
                       </div>
                     </div>
