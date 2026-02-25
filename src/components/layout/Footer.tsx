@@ -15,7 +15,7 @@ const quickLinks = [
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/littlelegendssch/", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
 ];
 
