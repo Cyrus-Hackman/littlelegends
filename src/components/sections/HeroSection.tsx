@@ -117,7 +117,7 @@ export function HeroSection() {
               />
               <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
                 <ParallaxImage 
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop"
+                  src="https://ik.imagekit.io/cyrus/LLS%20upload/IMG_7153.jpg"
                   alt="A happy little student smiling in class"
                   speed={0.4}
                 />
