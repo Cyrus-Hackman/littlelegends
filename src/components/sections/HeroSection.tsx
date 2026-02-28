@@ -107,7 +107,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative hidden lg:block"
+            className="relative mb-12 mt-8 lg:my-0 block"
           >
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <motion.div 
