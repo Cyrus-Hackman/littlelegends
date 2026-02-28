@@ -132,7 +132,7 @@ const Admissions = () => {
       return;
     }
 
-    // Construct Gmail web link
+    // Construct standard mailto link for universal compatibility
     const recipient = "principal@littlelegendschool.com";
     const subject = `Admission Inquiry: ${formData.childName}`;
     const bodyValues = [
@@ -146,13 +146,13 @@ const Admissions = () => {
       formData.message || "N/A"
     ].join("\n");
     
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyValues)}`;
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyValues)}`;
     
-    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    window.location.href = mailtoUrl;
     
     toast({
-      title: "Opening Gmail...",
-      description: "Your inquiry details were added to a new Gmail draft.",
+      title: "Opening Email Client...",
+      description: "Your inquiry details are being transferred to your email app.",
     });
 
     setFormData({

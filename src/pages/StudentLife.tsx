@@ -37,7 +37,7 @@ const StudentLife = () => {
   const sports = [
     {
       name: "Football",
-      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop",
+      image: "https://ik.imagekit.io/cyrus/LLS%20upload/IMG_6911.jpg",
       description: "Team spirit and athletic excellence on the field"
     },
     {
@@ -262,14 +262,14 @@ const StudentLife = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/Ahimah.jpeg",
               "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop",
               "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=400&fit=crop",
               "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=400&fit=crop",
               "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1560785496-3c9d27877182?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/Avianna.jpeg",
               "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop"
+              "https://ik.imagekit.io/cyrus/img2.jpeg"
             ].map((image, index) => (
               <div key={index} className="relative aspect-square overflow-hidden rounded-xl group">
                 <img 

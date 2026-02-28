@@ -12,7 +12,6 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { StaggeredText } from "@/components/animations/StaggeredText";
-import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string()
@@ -93,25 +92,35 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      const { data: response, error } = await supabase.functions.invoke('send-contact-email', {
-        body: data,
-      });
-
-      if (error) throw error;
+      // Construct standard mailto link for universal compatibility
+      const recipient = "info@littlelegends.edu";
+      const subject = data.subject || "Contact Inquiry";
+      const bodyValues = [
+        `Name: ${data.name}`,
+        `Email: ${data.email}`,
+        `Phone: ${data.phone || "N/A"}`,
+        "",
+        "Message:",
+        data.message
+      ].join("\n");
+      
+      const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyValues)}`;
+      
+      window.location.href = mailtoUrl;
 
       setIsSubmitted(true);
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. We'll get back to you within 24 hours.",
+        title: "Opening Email Client...",
+        description: "Your message details are being transferred to your email app.",
       });
       setTimeout(() => {
         setIsSubmitted(false);
         form.reset();
       }, 3000);
     } catch (error: any) {
-      console.error("Error sending message:", error);
+      console.error("Error formatting email:", error);
       toast({
-        title: "Failed to send message",
+        title: "Failed to open email client",
         description: "Please try again later or contact us directly by phone.",
         variant: "destructive",
       });
@@ -227,7 +236,7 @@ const Contact = () => {
                                 <FormControl>
                                   <Input
                                     type="tel"
-                                    placeholder="+233 (0) 54 410 0020"
+                                    placeholder="+1 (0) 123-456-789"
                                     className="h-12"
                                     {...field}
                                   />
