@@ -23,6 +23,7 @@ const gradeLevels = [
     description:
       "A nurturing environment where young learners develop foundational skills through play-based learning and exploration.",
     features: ["Play-based learning", "Motor skills development", "Early literacy", "Social skills"],
+    image: "/images/grade_preprimary.png",
   },
   {
     level: "Primary School",
@@ -31,6 +32,7 @@ const gradeLevels = [
     description:
       "Building strong academic foundations while encouraging curiosity and critical thinking through hands-on experiences.",
     features: ["Core subjects mastery", "Project-based learning", "STEM integration", "Creative arts"],
+    image: "/images/grade_primary.png",
   },
   {
     level: "Middle School",
@@ -39,6 +41,7 @@ const gradeLevels = [
     description:
       "Preparing students for advanced learning with a balanced curriculum that develops analytical and research skills.",
     features: ["Subject specialization", "Research projects", "Leadership programs", "Sports excellence"],
+    image: "/images/grade_middle.png",
   },
   {
     level: "High School",
@@ -47,6 +50,7 @@ const gradeLevels = [
     description:
       "Rigorous academic preparation for higher education with career guidance and real-world skill development.",
     features: ["University preparation", "Career counseling", "Advanced courses", "Internship opportunities"],
+    image: "/images/grade_high.png",
   },
 ];
 
@@ -134,71 +138,107 @@ const Academics = () => {
       <Header />
       <main className="bg-background">
         {/* Hero Section */}
-        <section className="pt-28 pb-16 bg-gradient-to-br from-accent via-background to-secondary">
+        <section className="pt-32 pb-20 bg-gradient-to-br from-background via-accent/30 to-background overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <BookOpen size={18} />
-                <span>Academic Excellence</span>
-              </div>
-              <div className="text-4xl md:text-5xl font-bold text-foreground mb-6 mt-4">
-                <StaggeredText text="A Curriculum That Opens Young Minds" highlightWords={["Young", "Minds"]} />
-              </div>
-              <p className="text-lg text-muted-foreground mb-8">
-                Powered by Pearson Edexcel's internationally recognized curriculum, we provide a
-                practical, hands-on education that nurtures curiosity and builds lifelong learners.
-              </p>
-              <div className="flex justify-center items-center mt-6">
-                <div className="bg-white/95 backdrop-blur-sm pt-4 pb-3 px-8 rounded-2xl shadow-sm border border-border/50 transition-transform hover:scale-105 duration-300">
-                  <img 
-                    src="https://logo.clearbit.com/pearson.com" 
-                    alt="Pearson Edexcel Logo" 
-                    className="h-10 md:h-12 object-contain"
-                  />
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <BookOpen size={18} />
+                  <span>Academic Excellence</span>
                 </div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                  <StaggeredText text="A Curriculum That Opens Young Minds" highlightWords={["Young", "Minds"]} />
+                </div>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Powered by Pearson Edexcel's internationally recognized curriculum, we provide a
+                  practical, hands-on education that nurtures curiosity and builds lifelong learners.
+                </p>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button size="lg" className="rounded-full gap-2">
+                    Explore Curriculum
+                    <ArrowRight size={16} />
+                  </Button>
+                  <div className="bg-white/95 backdrop-blur-sm py-2 px-6 rounded-full shadow-sm border border-border/50">
+                    <img 
+                      src="https://logo.clearbit.com/pearson.com" 
+                      alt="Pearson Edexcel Logo" 
+                      className="h-6 object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative mt-8 lg:mt-0">
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-border/50">
+                  <img
+                    src="/images/academics_hero.png"
+                    alt="Students engaged in a vibrant classroom"
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-secondary/30 rounded-full blur-3xl -z-10"></div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Grade Levels */}
-        <section className="py-20 bg-background">
+        <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Grade Levels
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-4">
                 Education for Every Stage
               </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-lg">
+                We provide a continuous, comprehensive learning journey tailored to each developmental stage of your child's life.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {gradeLevels.map((level) => (
                 <div
                   key={level.level}
-                  className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+                  className="group rounded-3xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
                 >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="text-primary" size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground">{level.level}</h3>
-                      <p className="text-primary font-medium">{level.grades}</p>
-                      <p className="text-sm text-muted-foreground">Ages {level.ages}</p>
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={level.image} 
+                      alt={level.level} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-1">{level.level}</h3>
+                        <p className="text-white/90 font-medium">{level.grades}</p>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-white shadow-lg">
+                        <GraduationCap size={24} />
+                      </div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">{level.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {level.features.map((feature) => (
-                      <span
-                        key={feature}
-                        className="text-xs bg-secondary text-secondary-foreground px-3 py-1 rounded-full"
-                      >
-                        {feature}
-                      </span>
-                    ))}
+                  
+                  <div className="p-8 flex-grow flex flex-col">
+                    <div className="mb-4 inline-block bg-muted text-muted-foreground px-3 py-1 rounded-full text-sm font-medium">
+                      Ages {level.ages}
+                    </div>
+                    <p className="text-muted-foreground mb-6 text-base leading-relaxed flex-grow">{level.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {level.features.map((feature) => (
+                        <span
+                          key={feature}
+                          className="text-xs font-medium bg-primary/5 text-primary border border-primary/10 px-3 py-1.5 rounded-full"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -207,80 +247,106 @@ const Academics = () => {
         </section>
 
         {/* Pearson Curriculum */}
-        <section className="py-20 bg-muted/50">
+        <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                  Our Curriculum
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1 relative">
+                <div className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                  <img
+                    src="/images/curriculum_hands_on.png"
+                    alt="Hands-on learning experience"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                {/* Floating stats card */}
+                <div className="absolute -bottom-8 -right-8 md:-right-12 bg-card p-6 rounded-2xl shadow-xl border border-border max-w-[240px] hidden md:block">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Lightbulb className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-2xl text-foreground">100%</h4>
+                      <p className="text-sm text-muted-foreground font-medium">Hands-on Learning</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2">
+                <span className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <Brain size={16} />
+                  <span>Our Curriculum</span>
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-                  Pearson Curriculum: Learning That Makes a Difference
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Learning That Makes a Difference
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6">
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   We have adopted the globally acclaimed Pearson curriculum because it
                   transforms education from rote memorization to practical understanding.
                   This approach opens children's minds by connecting classroom learning to
                   real-world applications.
                 </p>
-                <p className="text-muted-foreground mb-8">
-                  Pearson's research-based methodology ensures that students don't just
-                  learn facts—they develop critical thinking skills, creativity, and the
-                  ability to apply knowledge in meaningful ways.
-                </p>
-                <Button className="gap-2">
-                  Download Curriculum Guide
-                  <ArrowRight size={16} />
-                </Button>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                {curriculumFeatures.map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="p-6 rounded-xl bg-card border border-border"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <feature.icon className="text-primary" size={24} />
+                
+                <div className="grid sm:grid-cols-2 gap-6 mt-8">
+                  {curriculumFeatures.map((feature) => (
+                    <div
+                      key={feature.title}
+                      className="p-5 rounded-2xl bg-background/50 border border-border/50 hover:bg-card hover:shadow-md transition-all duration-300 group"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <feature.icon className="text-primary" size={20} />
+                      </div>
+                      <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                
+                <div className="mt-10">
+                  <Button size="lg" className="rounded-full gap-2 shadow-lg hover:shadow-primary/25 transition-all">
+                    Download Curriculum Guide
+                    <ArrowRight size={16} />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Teaching Methodology */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Teaching Methodology
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-                How We Teach
+        <section className="py-24 relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-primary/5 -z-20"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-gradient-to-t from-secondary/10 to-transparent -z-10 blur-3xl rounded-full"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-border/50 text-foreground px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
+                <Target size={16} className="text-primary" />
+                <span>Teaching Methodology</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                How We Inspire Minds
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Our innovative teaching methods ensure that every child is engaged,
-                challenged, and inspired to reach their full potential.
+                challenged, and inspired to reach their full potential in a supportive environment.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {teachingMethods.map((method, index) => (
                 <div
                   key={method.title}
-                  className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
+                  className="group p-8 rounded-3xl bg-card/80 backdrop-blur-md border border-border/50 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="text-primary" size={18} />
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <CheckCircle className="text-primary group-hover:text-primary-foreground" size={24} />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">{method.title}</h3>
-                    <p className="text-sm text-muted-foreground">{method.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{method.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{method.description}</p>
                 </div>
               ))}
             </div>
