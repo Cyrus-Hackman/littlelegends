@@ -10,7 +10,7 @@ const newsItems = [
     excerpt:
       "Join us for an exciting day of athletic competitions and team spirit as our students showcase their talents.",
     category: "Events",
-    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2011.56.16%20(1).jpeg",
   },
   {
     date: "Dec 20, 2024",
@@ -18,7 +18,7 @@ const newsItems = [
     excerpt:
       "Congratulations to all participants! Our young scientists impressed judges with innovative projects.",
     category: "Achievements",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2012.20.45.jpeg",
   },
   {
     date: "Dec 15, 2024",

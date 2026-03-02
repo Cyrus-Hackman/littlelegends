@@ -354,6 +354,7 @@ const Admissions = () => {
                       <SelectItem value="grade-4">Grade 4</SelectItem>
                       <SelectItem value="grade-5">Grade 5</SelectItem>
                       <SelectItem value="grade-6">Grade 6</SelectItem>
+                      <SelectItem value="grade-7">Grade 7</SelectItem>
                     </SelectContent>
                   </Select>
                   {errors.gradeLevel && (

@@ -59,7 +59,7 @@ const leadershipTeam = [
   {
     name: "Dr. Joycelyn Poku",
     role: "Principal",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/image.png?updatedAt=1772438440529",
     bio: "20+ years in education leadership. PhD in Educational Administration."
   },
   {
