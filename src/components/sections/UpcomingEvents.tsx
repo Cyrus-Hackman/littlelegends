@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { Calendar, MapPin, Clock, CalendarPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionWrapper";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const upcomingEvents = [
   {
@@ -46,12 +52,72 @@ const upcomingEvents = [
   },
 ];
 
+const parseEventDates = (event: typeof upcomingEvents[0]) => {
+  const dateStr = event.fullDate;
+  let startTimeStr = "00:00 AM";
+  let endTimeStr = "11:59 PM";
+  
+  if (event.time) {
+    const timeParts = event.time.split(" - ");
+    startTimeStr = timeParts[0];
+    if (timeParts.length > 1) {
+      endTimeStr = timeParts[1];
+    } else {
+      endTimeStr = timeParts[0];
+    }
+  }
+
+  const parseToDate = (dateString: string, timeString: string) => {
+    return new Date(`${dateString} ${timeString}`);
+  };
+
+  const startDate = parseToDate(dateStr, startTimeStr);
+  const endDate = parseToDate(dateStr, endTimeStr);
+
+  if (event.time && event.time.split(" - ").length === 1) {
+     endDate.setHours(endDate.getHours() + 1);
+  }
+
+  return { startDate, endDate };
+};
+
+const generateGoogleCalendarUrl = (event: typeof upcomingEvents[0]) => {
+  const title = encodeURIComponent(event.title);
+  const details = encodeURIComponent(`${event.category} Event`);
+  const location = encodeURIComponent(event.location);
+  
+  const { startDate, endDate } = parseEventDates(event);
+
+  const formatToISO8601 = (date: Date) => {
+    return date.toISOString().replace(/-|:|\.\d\d\d/g, "");
+  };
+
+  const startISO = formatToISO8601(startDate);
+  const endISO = formatToISO8601(endDate);
+
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startISO}/${endISO}&details=${details}&location=${location}`;
+};
+
+const generateOutlookCalendarUrl = (event: typeof upcomingEvents[0]) => {
+  const title = encodeURIComponent(event.title);
+  const details = encodeURIComponent(`${event.category} Event`);
+  const location = encodeURIComponent(event.location);
+  
+  const { startDate, endDate } = parseEventDates(event);
+
+  const formatForOutlook = (date: Date) => {
+    return date.toISOString();
+  };
+
+  const startStr = formatForOutlook(startDate);
+  const endStr = formatForOutlook(endDate);
+
+  return `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${title}&startdt=${startStr}&enddt=${endStr}&body=${details}&location=${location}`;
+};
+
 export function UpcomingEvents() {
-  // Placeholder function for calendar integration
-  const handleAddToCalendar = (e: React.MouseEvent, eventTitle: string) => {
-    e.preventDefault();
-    // In a real implementation, this would generate an ICS file or Google Calendar URL
-    alert(`Add to Calendar functionality triggered for: ${eventTitle}`);
+  const handleAddToCalendar = (url: string) => {
+    window.open(url, '_blank');
   };
 
   return (
@@ -132,15 +198,26 @@ export function UpcomingEvents() {
 
                     {/* Action Button */}
                     <div className="flex-shrink-0 w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-border">
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="w-full md:w-auto text-primary hover:text-primary hover:bg-primary/10 gap-2"
-                        onClick={(e) => handleAddToCalendar(e, event.title)}
-                      >
-                        <CalendarPlus size={16} />
-                        Add to Calendar
-                      </Button>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            className="w-full md:w-auto text-primary hover:text-primary hover:bg-primary/10 gap-2"
+                          >
+                            <CalendarPlus size={16} />
+                            Add to Calendar
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuItem onClick={() => handleAddToCalendar(generateGoogleCalendarUrl(event))}>
+                            Google Calendar
+                          </DropdownMenuItem>
+                          <DropdownMenuItem onClick={() => handleAddToCalendar(generateOutlookCalendarUrl(event))}>
+                            Microsoft Calendar
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </div>
 
                   </motion.div>

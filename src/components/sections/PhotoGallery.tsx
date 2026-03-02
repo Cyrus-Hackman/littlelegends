@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800",
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2010.16.55.jpeg",
     alt: "Students in classroom",
     category: "Academics"
   },
