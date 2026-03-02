@@ -23,7 +23,7 @@ const gradeLevels = [
     description:
       "A nurturing environment where young learners develop foundational skills through play-based learning and exploration.",
     features: ["Play-based learning", "Motor skills development", "Early literacy", "Social skills"],
-    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2010.16.55.jpeg",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2012.46.53.jpeg",
   },
   {
     level: "Primary School",
