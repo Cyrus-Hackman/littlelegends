@@ -263,9 +263,9 @@ const StudentLife = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               "https://ik.imagekit.io/cyrus/Ahimah.jpeg",
-              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2013.56.15.jpeg",
               "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/IMG_0113_2.jpg",
               "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop",
               "https://ik.imagekit.io/cyrus/Avianna.jpeg",
               "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=400&fit=crop",
