@@ -63,17 +63,17 @@ const leadershipTeam = [
     bio: "20+ years in education leadership. PhD in Educational Administration."
   },
   {
-    name: "Mr. Robert Smith",
+    name: "Mr. Antoine Nkrumah",
     role: "Vice Principal",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
     bio: "17+ years experience. Specializes in curriculum development."
   },
-  {
-    name: "Mrs. Sarah Johnson",
-    role: "Academic Director",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-    bio: "Expert in child psychology and innovative teaching methods."
-  }
+  // {
+  //   name: "Mrs. Sarah Johnson",
+  //   role: "Academic Director",
+  //   image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+  //   bio: "Expert in child psychology and innovative teaching methods."
+  // }
 ];
 
 const facultyMembers = [
