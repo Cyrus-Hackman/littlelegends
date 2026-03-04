@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   GraduationCap,
@@ -433,15 +434,20 @@ const Academics = () => {
               our academic programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                Schedule a Visit
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/contact">
+                  Schedule a Visit
+                </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10"
+                asChild
               >
-                Contact Admissions
+                <Link to="/contact">
+                  Contact Admissions
+                </Link>
               </Button>
             </div>
           </div>

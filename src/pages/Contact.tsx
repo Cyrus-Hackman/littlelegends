@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -421,8 +422,10 @@ const Contact = () => {
                   to learn more about Little Legends School.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="text-base">
-                    Schedule a Tour
+                  <Button size="lg" className="text-base" asChild>
+                    <Link to="/admissions">
+                      Schedule a Tour
+                    </Link>
                   </Button>
                   <Button variant="outline" size="lg" className="text-base">
                     View FAQs

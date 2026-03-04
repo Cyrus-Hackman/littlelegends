@@ -53,8 +53,11 @@ export function CTASection() {
                   size="lg"
                   variant="outline"
                   className="text-base bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10"
+                  asChild
                 >
-                  Schedule a Visit
+                  <Link to="/contact">
+                    Schedule a Visit
+                  </Link>
                 </Button>
               </motion.div>
             </div>

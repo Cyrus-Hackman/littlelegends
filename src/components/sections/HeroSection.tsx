@@ -66,8 +66,10 @@ export function HeroSection() {
                   <ArrowRight size={18} />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="text-base">
-                Schedule a Visit
+              <Button size="lg" variant="outline" className="text-base" asChild>
+                <Link to="/contact">
+                  Schedule a Visit
+                </Link>
               </Button>
             </motion.div>
 

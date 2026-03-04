@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Music, Palette, Trophy, Users, Star, Heart, Lightbulb, Target } from "lucide-react";
 import { StaggeredText } from "@/components/animations/StaggeredText";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
+import { Link } from "react-router-dom";
 
 const StudentLife = () => {
   const clubs = [
@@ -264,11 +265,11 @@ const StudentLife = () => {
             {[
               "https://ik.imagekit.io/cyrus/Ahimah.jpeg",
               "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2013.56.15.jpeg",
-              "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-04%20at%2014.05.04.jpeg",
               "https://ik.imagekit.io/cyrus/IMG_0113_2.jpg",
-              "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-04%20at%2014.18.31.jpeg",
               "https://ik.imagekit.io/cyrus/Avianna.jpeg",
-              "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=400&fit=crop",
+              "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-04%20at%2014.39.19.jpeg",
               "https://ik.imagekit.io/cyrus/img2.jpeg"
             ].map((image, index) => (
               <div key={index} className="relative aspect-square overflow-hidden rounded-xl group">
@@ -281,6 +282,8 @@ const StudentLife = () => {
               </div>
             ))}
           </div>
+
+          
         </div>
       </section>
 
@@ -293,8 +296,10 @@ const StudentLife = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Give your child the opportunity to explore, learn, and grow in a nurturing environment
           </p>
-          <Button size="lg" className="text-lg px-8">
-            Apply for Admission
+          <Button size="lg" className="text-lg px-8" asChild>
+            <Link to="/admissions">
+              Apply for Admission
+            </Link>
           </Button>
         </div>
       </section>

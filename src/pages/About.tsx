@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FadeIn, StaggerContainer, StaggerItem, ScaleIn } from "@/components/animations/MotionWrapper";
@@ -149,8 +150,10 @@ const About = () => {
                   in a supportive and innovative learning environment.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="gap-2">
-                    Schedule a Visit
+                  <Button size="lg" className="gap-2" asChild>
+                    <Link to="/contact">
+                      Schedule a Visit
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline">
                     Download Brochure
@@ -448,11 +451,15 @@ const About = () => {
                 Become part of the Little Legends family and give your child the foundation for a bright future.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" variant="secondary">
-                  Apply Now
+                <Button size="lg" variant="secondary" asChild>
+                  <Link to="/admissions">
+                    Apply Now
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10">
-                  Contact Us
+                <Button size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10" asChild>
+                  <Link to="/contact">
+                    Contact Us
+                  </Link>
                 </Button>
               </div>
             </FadeIn>
