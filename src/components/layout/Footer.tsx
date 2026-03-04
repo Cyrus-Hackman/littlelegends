@@ -46,10 +46,12 @@ export function Footer() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
             }}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">LL</span>
-              </div>
+            <div className="flex items-center gap-2 mb-4 group">
+              <img 
+                src="https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2014.56.49.jpeg" 
+                alt="Little Legends School Logo" 
+                className="w-10 h-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-sm"
+              />
               <span className="font-bold text-xl">Little Legends School</span>
             </div>
             <p className="text-background/70 mb-6 max-w-md">

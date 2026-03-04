@@ -48,10 +48,12 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">LLS</span>
-            </div>
+          <a href="/" className="flex items-center gap-2 group">
+            <img 
+              src="https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2014.56.49.jpeg" 
+              alt="Little Legends School Logo" 
+              className="w-10 h-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-sm"
+            />
             <span className="font-bold text-lg md:text-xl text-foreground">
               Little Legends School
             </span>
