@@ -365,8 +365,8 @@ const Contact = () => {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border">
-                <div className="aspect-[16/9] md:aspect-[21/9]">
+              <div className="flex flex-col md:relative rounded-2xl overflow-hidden shadow-xl border border-border">
+                <div className="aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15880.473237138644!2d-0.10464302327880859!3d5.696041748564722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf83fcae5fd9eb%3A0x4d85b43d994767c6!2sLITTLE%20LEGENDS%20SCHOOL%2C%20East%20Legon%20Hills!5e0!3m2!1sen!2sgh!4v1771575004226!5m2!1sen!2sgh"
                     width="100%"
@@ -376,12 +376,12 @@ const Contact = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="School Location"
-                    className="absolute inset-0"
+                    className="md:absolute md:inset-0"
                   />
                 </div>
 
                 {/* Map Overlay Card */}
-                <div className="absolute bottom-6 left-6 right-6 md:right-auto md:max-w-sm">
+                <div className="md:absolute md:bottom-6 md:left-6 md:right-auto md:max-w-sm p-4 md:p-0">
                   <div className="bg-card/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-border">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
@@ -393,7 +393,7 @@ const Contact = () => {
                           EAST-LEGON HILLS, AUDU STREET, Accra
                         </p>
                         <a
-                          href="https://maps.google.com"
+                          href="https://www.google.com/maps/dir/?api=1&destination=LITTLE+LEGENDS+SCHOOL+East+Legon+Hills"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-primary font-medium hover:underline"
