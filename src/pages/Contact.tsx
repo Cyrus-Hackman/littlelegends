@@ -62,12 +62,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+233 (0) 54 410 0020", "+1 (234) 567-891"],
+    details: ["+233 (0) 54 410 0020", ],
   },
   {
     icon: Mail,
     title: "Email",
-    details: ["info@littlelegends.edu", "admissions@littlelegends.edu"],
+    details: ["principal@littlelegends.edu", "admissions@littlelegends.edu"],
   },
   {
     icon: Clock,
@@ -94,7 +94,7 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     try {
       // Construct standard mailto link for universal compatibility
-      const recipient = "info@littlelegends.edu";
+      const recipient = "principal@littlelegends.edu";
       const subject = data.subject || "Contact Inquiry";
       const bodyValues = [
         `Name: ${data.name}`,
