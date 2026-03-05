@@ -13,7 +13,7 @@ const StudentLife = () => {
       name: "Science Club",
       description: "Explore experiments, inventions, and the wonders of science through hands-on projects.",
       icon: Lightbulb,
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop"
+      image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.3.jpeg?updatedAt=1772707953566"
     },
     {
       name: "Art & Craft Club",
