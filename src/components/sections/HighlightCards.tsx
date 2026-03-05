@@ -10,7 +10,7 @@ const highlights = [
     description:
       "A rigorous curriculum designed to challenge and inspire students at every level, blending traditional learning with modern approaches.",
     link: "/academics",
-    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.35.53.jpeg",
   },
   {
     icon: Users,
@@ -18,7 +18,7 @@ const highlights = [
     description:
       "A vibrant community where students explore their passions through clubs, sports, arts, and leadership opportunities.",
     link: "/student-life",
-    image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=600&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/1234567.jpeg",
   },
   {
     icon: FileText,
@@ -26,7 +26,7 @@ const highlights = [
     description:
       "Begin your journey with us. Learn about our admission process, requirements, and how to apply for the upcoming academic year.",
     link: "/admissions",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.36.16.jpeg",
   },
 ];
 

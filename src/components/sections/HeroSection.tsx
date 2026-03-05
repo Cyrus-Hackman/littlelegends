@@ -33,7 +33,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
             >
               <GraduationCap size={18} />
-              <span>Admissions Open 2025-26</span>
+              <span>Admissions Open 2026-27</span>
             </motion.div>
 
             <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 mt-4">

@@ -172,7 +172,7 @@ const Academics = () => {
               <div className="relative mt-8 lg:mt-0">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-border/50">
                   <img
-                    src="/images/academics_hero.png"
+                    src="https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.35.48.jpeg?updatedAt=1772707953249"
                     alt="Students engaged in a vibrant classroom"
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-700"
                   />
@@ -362,7 +362,7 @@ const Academics = () => {
                 Academic Calendar
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
-                2024-2025 School Year
+                2026-2027 School Year
               </h2>
             </div>
 

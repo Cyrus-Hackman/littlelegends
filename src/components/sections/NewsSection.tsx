@@ -18,7 +18,7 @@ const newsItems = [
     excerpt:
       "Congratulations to all participants! Our young scientists impressed judges with innovative projects.",
     category: "Achievements",
-    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2012.20.45.jpeg",
+    image: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.35.52.jpeg",
   },
   {
     date: "Dec 15, 2024",
