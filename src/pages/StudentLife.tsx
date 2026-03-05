@@ -42,19 +42,19 @@ const StudentLife = () => {
       description: "Team spirit and athletic excellence on the field"
     },
     {
-      name: "Basketball",
-      image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop",
-      description: "Developing coordination, teamwork, and competitive spirit"
+      name: "Ballet Dance",
+      image: "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=400&h=300&fit=crop",
+      description: "A dynamic combination of song and dance that brings stories to life"
     },
     {
-      name: "Swimming",
-      image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=300&fit=crop",
-      description: "Building strength and water safety skills"
+      name: "Contemporary Dance",
+      image: "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=400&h=300&fit=crop",
+      description: "Fluid and expressive modern dance combining elements of several genres"
     },
     {
-      name: "Athletics",
-      image: "https://images.unsplash.com/photo-1461896836934- voices-running?w=400&h=300&fit=crop",
-      description: "Track and field events for all skill levels"
+      name: "Taekwondo",
+      image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=400&h=300&fit=crop",
+      description: "Developing physical fitness, mental focus, and self-defense skills"
     }
   ];
 
