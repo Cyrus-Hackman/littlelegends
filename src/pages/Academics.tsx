@@ -117,7 +117,7 @@ const teachingMethods = [
 
 const academicCalendar = [
   { term: "Term 1", period: "August - December", weeks: "18 weeks", exams: "Mid-term: October | Final: December" },
-  { term: "Term 2", period: "January - April", weeks: "16 weeks", exams: "Mid-term: February | Final: April" },
+  { term: "Term 2", period: "January - April", weeks: "12 weeks", exams: "Mid-term: February | Final: April" },
   { term: "Term 3", period: "May - July", weeks: "10 weeks", exams: "Final: July" },
 ];
 

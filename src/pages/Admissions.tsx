@@ -133,7 +133,7 @@ const Admissions = () => {
     }
 
     // Construct standard mailto link for universal compatibility
-    const recipient = "principal@littlelegendschool.com";
+    const recipient = "principal@littlelegendschool.edu.gh";
     const subject = `Admission Inquiry: ${formData.childName}`;
     const bodyValues = [
       `Parent Name: ${formData.parentName}`,
@@ -203,26 +203,32 @@ const Admissions = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {applicationSteps.map((item, index) => (
-              <div key={index} className="relative">
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <item.icon className="w-8 h-8 text-primary" />
+          <div className="relative max-w-6xl mx-auto mt-20">
+            {/* Track Line */}
+            <div className="hidden lg:block absolute top-6 left-[12%] right-[12%] h-1 bg-primary/20 rounded-full" />
+            <div className="lg:hidden absolute top-6 bottom-6 left-6 w-1 bg-primary/20 rounded-full" />
+
+            <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 relative">
+              {applicationSteps.map((item, index) => (
+                <div key={index} className="relative flex flex-col lg:items-center items-start pl-20 lg:pl-0 group">
+                  
+                  {/* Number Node sitting on the track */}
+                  <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-0 w-12 h-12 rounded-full border-4 border-background bg-card text-muted-foreground flex items-center justify-center font-bold text-xl shadow-md z-10 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary/30 group-hover:scale-110 transition-all duration-500">
+                    {item.step}
+                  </div>
+                  
+                  {/* Content below the track */}
+                  <div className="lg:text-center pt-2 lg:pt-20 w-full group-hover:-translate-y-2 transition-transform duration-500">
+                    <div className="w-16 h-16 lg:mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-6 shadow-sm border border-primary/10">
+                       <item.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 font-bold">
-                      {item.step}
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
-                  </CardContent>
-                </Card>
-                {index < applicationSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-primary/30" />
-                )}
-              </div>
-            ))}
+                    <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground text-base leading-relaxed">{item.description}</p>
+                  </div>
+
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -410,7 +416,7 @@ const Admissions = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-1">Email</h4>
-                        <p className="opacity-90">admissions@littlelegends.edu</p>
+                        <p className="opacity-90">principal@littlelegends.edu.gh</p>
                       </div>
                     </div>
                     

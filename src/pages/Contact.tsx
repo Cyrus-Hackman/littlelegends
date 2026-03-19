@@ -67,7 +67,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["principal@littlelegends.edu", "admissions@littlelegends.edu"],
+    details: ["principal@littlelegends.edu.gh", "principal@littlelegends.edu.gh"],
   },
   {
     icon: Clock,
@@ -94,7 +94,7 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     try {
       // Construct standard mailto link for universal compatibility
-      const recipient = "principal@littlelegends.edu";
+      const recipient = "principal@littlelegends.edu.gh";
       const subject = data.subject || "Contact Inquiry";
       const bodyValues = [
         `Name: ${data.name}`,

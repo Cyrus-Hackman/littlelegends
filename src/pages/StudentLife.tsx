@@ -106,7 +106,7 @@ const StudentLife = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <ParallaxImage 
-          src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&h=1080&fit=crop"
+          src="https://ik.imagekit.io/cyrus/LLS%20upload/IMG_6895.jpg?updatedAt=1772117261144"
           alt="Student Life Hero"
           className="absolute inset-0 z-0"
           speed={0.3}

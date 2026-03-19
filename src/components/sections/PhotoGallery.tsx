@@ -12,9 +12,9 @@ const galleryImages = [
     category: "Academics"
   },
   {
-    src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800",
-    alt: "Library reading session",
-    category: "Facilities"
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-02%20at%2012.20.45.jpeg?updatedAt=1772454133106",
+    alt: "Science Practical session",
+    category: "Academics"
   },
   {
     src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.07.23.jpeg?updatedAt=1773901025416",
