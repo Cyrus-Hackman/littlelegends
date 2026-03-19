@@ -13,6 +13,31 @@ import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { StaggeredText } from "@/components/animations/StaggeredText";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+
+const contactFaqs = [
+  {
+    question: "What are your school's operating hours?",
+    answer: "Our main office is open Monday through Friday from 8:00 AM to 4:00 PM. We are also open on Saturdays from 9:00 AM to 1:00 PM for inquiries."
+  },
+  {
+    question: "How can I schedule a campus tour?",
+    answer: "You can schedule a campus tour by calling our admissions office at +233 (0) 54 410 0020 or by clicking the 'Schedule a Tour' button on our Admissions page."
+  },
+  {
+    question: "Who do I contact for billing inquiries?",
+    answer: "For all tuition, fees, and billing inquiries, please contact our finance department by calling the main office."
+  },
+  {
+    question: "Are your teachers certified and experienced?",
+    answer: "Yes, all our lead teachers hold relevant degrees in education and subject specialties, with many years of experience delivering the Pearson Edexcel curriculum."
+  },
+  {
+    question: "How do you handle medical emergencies?",
+    answer: "We have a fully equipped sick bay with a qualified resident nurse. In case of emergencies, parents are immediately notified."
+  }
+];
 
 const contactSchema = z.object({
   name: z.string()
@@ -133,21 +158,24 @@ const Contact = () => {
       <Header />
       <main className="pt-20 bg-background">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 bg-gradient-to-br from-primary/10 via-secondary to-accent overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
-          </div>
-          <div className="container mx-auto px-4 relative z-10">
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+          <ParallaxImage 
+            src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&h=1080&fit=crop"
+            alt="Contact Us Hero"
+            className="absolute inset-0 z-0"
+            speed={0.3}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-0" />
+          <div className="relative z-10 text-center text-primary-foreground px-4 max-w-4xl mx-auto flex flex-col items-center justify-center">
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+                <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                   Get In Touch
                 </span>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                  <StaggeredText text="Contact Us" highlightWords={["Contact", "Us"]} />
+                <div className="w-full flex justify-center text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-md">
+                  <StaggeredText text="Contact Us" />
                 </div>
-                <p className="text-lg md:text-xl text-muted-foreground">
+                <p className="w-full text-center mt-2 text-xl md:text-2xl opacity-90">
                   Have questions? We'd love to hear from you. Send us a message 
                   and we'll respond as soon as possible.
                 </p>
@@ -409,26 +437,44 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* FAQ CTA Section */}
+        {/* FAQ Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <FadeIn>
-              <div className="bg-gradient-to-br from-accent via-secondary to-primary/10 rounded-3xl p-8 md:p-12 lg:p-16 text-center">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                  Have More Questions?
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                  Check out our frequently asked questions or schedule a campus tour 
-                  to learn more about Little Legends School.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="max-w-3xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Frequently Asked Questions
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Quick answers to common questions about our school
+                  </p>
+                </div>
+                
+                <Accordion type="single" collapsible className="w-full space-y-4 mb-12">
+                  {contactFaqs.map((faq, index) => (
+                    <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-xl px-6 shadow-sm">
+                      <AccordionTrigger className="text-left font-semibold hover:no-underline hover:text-primary transition-colors py-4">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+
+                <div className="bg-gradient-to-br from-accent via-secondary to-primary/10 rounded-3xl p-8 text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">
+                    Still have questions?
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    Schedule a campus tour to see our facilities and speak with our staff directly.
+                  </p>
                   <Button size="lg" className="text-base" asChild>
                     <Link to="/admissions">
                       Schedule a Tour
                     </Link>
-                  </Button>
-                  <Button variant="outline" size="lg" className="text-base">
-                    View FAQs
                   </Button>
                 </div>
               </div>

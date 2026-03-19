@@ -20,7 +20,31 @@ import {
   MapPin
 } from "lucide-react";
 import { StaggeredText } from "@/components/animations/StaggeredText";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
+
+const admissionsFaqs = [
+  {
+    question: "What is the correct age for admission into Nursery?",
+    answer: "Children should be 3 years old by September 1st of the academic year they are applying for."
+  },
+  {
+    question: "Do you offer school bus services?",
+    answer: "Yes, we provide safe and reliable transportation services across various routes in Accra. Please contact the admissions office for specific route details and fees."
+  },
+  {
+    question: "When is the deadline for applications?",
+    answer: "We accept applications year-round on a rolling basis, but we recommend applying by May for the upcoming academic year starting in August to secure a place."
+  },
+  {
+    question: "Are there any entrance exams?",
+    answer: "For Primary school and above, we conduct a brief, age-appropriate assessment in Literacy and Numeracy to ensure we can properly support your child's learning journey."
+  },
+  {
+    question: "Do you offer sibling discounts?",
+    answer: "Yes, we offer a 5% discount on tuition for the second child, and a 10% discount for the third child and subsequent siblings."
+  }
+];
 
 const inquirySchema = z.object({
   parentName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -265,8 +289,35 @@ const Admissions = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-background border-t border-border/50">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Quick answers to common questions about admissions and enrollment
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {admissionsFaqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-card border border-border rounded-xl px-6">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline hover:text-primary transition-colors py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* Inquiry Form Section */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
