@@ -50,7 +50,27 @@ const galleryImages = [
     src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.08.49.jpeg?updatedAt=1773901025388",
     alt: "Independence Day Celebration",
     category: "Events"
-  }
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.35.52.jpeg?updatedAt=1772707953316",
+    alt: "Science Practicals",
+    category: "Academics"
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.3.jpeg?updatedAt=1772707953566",
+    alt: "Science Practicals",
+    category: "Academics"
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-05%20at%2007.35.53.jpeg?updatedAt=1772707953446",
+    alt: "Science Practicals",
+    category: "Academics"
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/1234567.jpeg?updatedAt=1772707953689",
+    alt: "A Curious Mind in the Lab",
+    category: "Facilities"
+  },
 ];
 
 const categories = ["All", "Academics", "Facilities", "Events"];
@@ -108,36 +128,35 @@ export function PhotoGallery() {
         </FadeIn>
 
         {/* Gallery Grid */}
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
             {filteredImages.map((image, index) => (
-              <StaggerItem key={image.src}>
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-lg"
-                  onClick={() => setSelectedImage(index)}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white font-medium">{image.alt}</p>
-                      <span className="text-white/80 text-sm">{image.category}</span>
-                    </div>
+              <motion.div
+                layout
+                key={image.src}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-lg"
+                onClick={() => setSelectedImage(index)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-medium">{image.alt}</p>
+                    <span className="text-white/80 text-sm">{image.category}</span>
                   </div>
-                  <div className="absolute inset-0 ring-2 ring-primary/0 group-hover:ring-primary/50 rounded-xl transition-all duration-300" />
-                </motion.div>
-              </StaggerItem>
+                </div>
+                <div className="absolute inset-0 ring-2 ring-primary/0 group-hover:ring-primary/50 rounded-xl transition-all duration-300" />
+              </motion.div>
             ))}
           </AnimatePresence>
-        </StaggerContainer>
+        </motion.div>
 
         {/* Lightbox Dialog */}
         <Dialog open={selectedImage !== null} onOpenChange={() => setSelectedImage(null)}>
