@@ -71,6 +71,11 @@ const galleryImages = [
     alt: "A Curious Mind in the Lab",
     category: "Facilities"
   },
+  {
+    src: "https://ik.imagekit.io/cyrus/WhatsApp%20Image%202026-03-04%20at%2014.05.04.jpeg?updatedAt=1772633256198",
+    alt: "Unit Test In Progress",
+    category: "Academics"
+  },
 ];
 
 const categories = ["All", "Academics", "Facilities", "Events"];
