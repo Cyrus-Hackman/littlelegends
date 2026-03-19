@@ -17,38 +17,38 @@ const galleryImages = [
     category: "Facilities"
   },
   {
-    src: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800",
-    alt: "Sports day event",
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.07.23.jpeg?updatedAt=1773901025416",
+    alt: "Independence Day Celebration",
     category: "Events"
   },
   {
-    src: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=800",
-    alt: "Science experiment",
-    category: "Academics"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800",
-    alt: "School entrance",
-    category: "Facilities"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800",
-    alt: "Annual day celebration",
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.08.51%20(1).jpeg?updatedAt=1773901025724",
+    alt: "Independence Day Celebration",
     category: "Events"
   },
   {
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
-    alt: "Art class",
-    category: "Academics"
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.06.26%20(1).jpeg?updatedAt=1773901025354",
+    alt: "Independence Day Celebration",
+    category: "Events"
   },
   {
-    src: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800",
-    alt: "School playground",
-    category: "Facilities"
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.06.24%20(2).jpeg?updatedAt=1773901025432",
+    alt: "Independence Day Celebration",
+    category: "Events"
   },
   {
-    src: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800",
-    alt: "Graduation ceremony",
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.06.24.jpeg?updatedAt=1773901025393",
+    alt: "Independence Day Celebration",
+    category: "Events"
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.06.25.jpeg?updatedAt=1773901025410",
+    alt: "Independence Day Celebration",
+    category: "Events"
+  },
+  {
+    src: "https://ik.imagekit.io/cyrus/independence%20LLS/WhatsApp%20Image%202026-03-06%20at%2021.08.49.jpeg?updatedAt=1773901025388",
+    alt: "Independence Day Celebration",
     category: "Events"
   }
 ];

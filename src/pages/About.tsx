@@ -58,7 +58,7 @@ const timelineEvents = [
 
 const leadershipTeam = [
   {
-    name: "Dr. Joycelyn Poku",
+    name: "Ms. Joycelyn Poku",
     role: "Principal",
     image: "https://ik.imagekit.io/cyrus/image.png?updatedAt=1772438440529",
     bio: "20+ years in education leadership. PhD in Educational Administration."

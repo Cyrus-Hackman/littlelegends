@@ -19,7 +19,7 @@ export function PrincipalMessage() {
                 >
                   <ParallaxImage 
                     src="https://ik.imagekit.io/cyrus/image.png"
-                    alt="Dr. Joycelyn Poku - Principal"
+                    alt="Ms. Joycelyn Poku - Principal"
                     speed={0.2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
@@ -77,7 +77,7 @@ export function PrincipalMessage() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-border">
-                    <p className="font-semibold text-foreground">Dr. Joycelyn Poku</p>
+                    <p className="font-semibold text-foreground">Ms. Joycelyn Poku</p>
                     <p className="text-sm text-muted-foreground">
                       Principal, Little Legends School
                     </p>
