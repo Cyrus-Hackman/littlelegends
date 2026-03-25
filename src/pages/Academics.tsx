@@ -362,7 +362,7 @@ const Academics = () => {
                 Academic Calendar
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3">
-                2026-2027 School Year
+                2025-2026 School Year
               </h2>
             </div>
 
